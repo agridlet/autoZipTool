@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import filedialog
 from subprocess import Popen
+from autoZip import zip_file
 
 def browse_button():
     # Allow user to select a directory and store it in global var
@@ -18,7 +19,9 @@ def browse_button():
 def start():
     import os
 #    os.system("python test.py")
-    Popen(["python", "autoZip.py"])
+    global folder_path_transit
+    global folder_path_model_webgl
+    zip_file(folder_path_transit.get(), folder_path_model_webgl.get())
 
 # ma premiere fenetre
 window = Tk()
